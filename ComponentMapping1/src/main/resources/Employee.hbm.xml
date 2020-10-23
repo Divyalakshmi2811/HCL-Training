@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Generated 20 Oct, 2020 10:09:54 AM by Hibernate Tools 3.5.0.Final -->
+
+<hibernate-mapping>
+
+
+	<class table="EMPLOYEE" name="org.hcl.Employee">
+
+
+		<id name="eno" column="ENO" type="int">
+
+			<generator class="assigned" />
+
+		</id>
+
+		<property name="name" column="NAME" type="java.lang.String" />
+
+		<property name="sal" type="int" />
+
+
+		<component name="address" class="org.hcl.Address">
+
+			<property name="hno" column="HNO" />
+
+			<property name="streetName" column="STREETNAME" />
+
+			<property name="loc" column="LOCATION" />
+
+		</component>
+
+	</class>
+
+</hibernate-mapping>

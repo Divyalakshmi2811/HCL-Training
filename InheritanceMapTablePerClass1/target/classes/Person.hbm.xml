@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping>
+
+
+<class table="PERSON" name="org.hcl.Person" discriminator-value="coach">
+
+
+<id name="personId" type="int">
+
+<generator class="assigned"/>
+
+</id>
+
+<discriminator not-null="true" insert="true" column="category"/>
+
+<property name="firstName" type="java.lang.String" lazy="false" generated="never"/>
+
+<property name="lastName" type="java.lang.String" lazy="false" generated="never"/>
+
+
+<subclass name="org.hcl.BatsMan" discriminator-value="batsman">
+
+<property name="battingHand" type="string"/>
+
+<property name="highestScore" type="integer"/>
+
+</subclass>
+
+
+<subclass name="org.hcl.Bowler" discriminator-value="bowler">
+
+<property name="bowlingHand" type="string"/>
+
+<property name="wickets" type="int"/>
+
+</subclass>
+
+</class>
+
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+
+	<class table="EMP" name="org.hcl.Emp">
+
+
+		<id name="eno" type="int">
+
+			<column name="ENO" />
+
+			<generator class="assigned" />
+
+		</id>
+
+
+		<property name="name" type="java.lang.String">
+
+			<column name="NAME" />
+
+		</property>
+
+
+		<property name="address" type="java.lang.String">
+
+			<column name="ADDRESS" />
+
+		</property>
+
+	</class>
+
+</hibernate-mapping>
